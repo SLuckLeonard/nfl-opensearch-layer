@@ -4,7 +4,7 @@ A search and analytics layer built on top of a PostgreSQL NFL database using Ope
 
 This project is the second half of a two-part NFL data platform:
 
-- **[nfl-postgres-pipeline](https://github.com/SLuckLeonard/nfl-postgres-pipeline)** — PostgreSQL source of truth, ETL pipeline, relational schema
+- **[nfl-postgres-pipeline](https://github.com/SLuckLeonard/-nfl-postgres-pipeline)** — PostgreSQL source of truth, ETL pipeline, relational schema
 - **nfl-opensearch-layer** ← you are here — search + analytics layer on top of that data
 
 ---

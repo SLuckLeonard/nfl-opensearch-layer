@@ -29,7 +29,7 @@ This project is the second half of a two-part NFL data platform:
 └─────────────────────────┘
 ```
 
-**Why two databases?** PostgreSQL handles transactional writes, foreign key relationships, and is the authoritative record. OpenSearch sits on top as a read-optimized layer — it powers fast full-text search across game summaries and aggregation queries that would be expensive in SQL. 
+**Why two databases?** PostgreSQL handles transactional writes, foreign key relationships, and is the authoritative record. OpenSearch sits on top as a read-optimized layer. OpenSearch powers fast full-text search across game summaries and aggregation queries that would be expensive in SQL. 
 
 ---
 
@@ -39,13 +39,13 @@ The `nfl_games` index uses explicit mappings — the OpenSearch equivalent of a 
 
 | Field | Type | Reason |
 |---|---|---|
-| `home_team`, `away_team`, `status` | `keyword` | Exact-match filtering (e.g. "Chiefs home games") — not analyzed |
-| `game_summary` | `text` | Full-text search with a custom analyzer — tokenized and lowercased |
+| `home_team`, `away_team`, `status` | `keyword` | Exact-match filtering (e.g. "Chiefs home games") not analyzed |
+| `game_summary` | `text` | Full-text search with a custom analyzer both tokenized and lowercased |
 | `home_score`, `away_score`, `total_points` | `integer` | Range queries and aggregations |
 | `over_under_line` | `float` | Decimal precision for betting lines |
 | `game_date` | `date` | Date range filtering and sorting |
 
-The custom `nfl_analyzer` uses a standard tokenizer with lowercase and stop-word filters — making searches for "cowboys" match "Dallas Cowboys" regardless of casing.
+The custom `nfl_analyzer` uses a standard tokenizer with lowercase and stop-word filters which makes searches for "cowboys" match "Dallas Cowboys" regardless of casing.
 
 ---
 

@@ -1,6 +1,6 @@
 # NFL OpenSearch Search & Analytics Layer
 
-A search and analytics layer built on top of a PostgreSQL NFL database using OpenSearch. Enables full-text search across game summaries and aggregation-based analytics — mirroring how production data platforms pair a relational store with a dedicated search engine.
+A search and analytics layer built on top of a PostgreSQL NFL database using OpenSearch. Enables full-text search across game summaries and aggregation-based analytics, mirroring how production data platforms pair a relational store with a dedicated search engine.
 
 This project is the second half of a two-part NFL data platform:
 
